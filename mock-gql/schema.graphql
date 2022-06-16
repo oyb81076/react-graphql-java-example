@@ -1,0 +1,40 @@
+"""Exposes a URL that specifies the behaviour of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behaviour of this scalar."""
+  url: String!
+) on SCALAR
+
+type Mutation {
+  updateProject(input: UpdateProject!): Project
+  updateUserName(id: ID!, name: String!): User
+}
+
+type Project {
+  id: ID!
+  name: String!
+  author: User!
+}
+
+type Query {
+  """ 根据ID获取项目"""
+  project(id: ID!): Project
+  projects: [Project!]!
+
+  """ 根据ID获取人物信息"""
+  user(id: ID!): User
+  users: [User!]!
+}
+
+input UpdateProject {
+  id: ID!
+  name: String!
+  authorId: ID!
+}
+
+type User {
+  id: ID!
+  name: String!
+  age: Int!
+  male: Boolean!
+}
+

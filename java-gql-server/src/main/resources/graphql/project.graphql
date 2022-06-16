@@ -1,0 +1,18 @@
+extend type Query {
+    # 根据ID获取项目
+    project(id: ID!): Project
+    projects: [Project!]!
+}
+extend type Mutation {
+    updateProject(input: UpdateProject!): Project
+}
+type Project {
+    id: ID!
+    name: String!
+    author: User!
+}
+input UpdateProject {
+    id: ID!
+    name: String!
+    authorId: ID!
+}

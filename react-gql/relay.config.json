@@ -1,0 +1,5 @@
+{
+  "src": "./src/",
+  "schema": "../mock-gql/schema.graphql",
+  "language": "typescript"
+}
