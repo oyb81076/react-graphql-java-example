@@ -25,9 +25,9 @@ public class UserController {
 
     public UserController(BatchLoaderRegistry registry) {
         registry.forTypePair(Long.class, User.class).registerMappedBatchLoader((authorIds, env) ->
-            Flux.fromIterable(authorIds)
-                .flatMap(this::user)
-                .collectMap(User::id));
+                Flux.fromIterable(authorIds)
+                        .flatMap(this::user)
+                        .collectMap(User::id));
     }
 
     @QueryMapping
@@ -40,15 +40,16 @@ public class UserController {
     @QueryMapping
     public Mono<List<User>> users() {
         if (++call % 3 != 0) {
-            return Mono.error(new RandomError("服务器随机失败 " + new Date()));
+            return Mono
+                    .error(new RandomError("服务器随机失败 " + new Date()));
         }
         return Mono.just(Arrays.asList(
-                new User(100, "n100", 1, false),
-                new User(200, "n200", 1, false),
-                new User(300, "n300", 1, false),
-                new User(400, "n400", 1, false)
-            ))
-            .delayElement(Duration.ofSeconds(1));
+                        new User(100, "n100", 1, false),
+                        new User(200, "n200", 1, false),
+                        new User(300, "n300", 1, false),
+                        new User(400, "n400", 1, false)
+                ))
+                .delayElement(Duration.ofSeconds(1));
     }
 
     @MutationMapping

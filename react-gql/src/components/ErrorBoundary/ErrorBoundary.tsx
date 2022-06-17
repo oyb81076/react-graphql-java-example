@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoundaryContext } from './useBoundary';
+import { BoundaryContext } from '../../hooks/useErrorBoundary';
 
 interface Props {
   retry?: boolean;
