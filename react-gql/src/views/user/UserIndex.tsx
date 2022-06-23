@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, useLazyLoadQuery } from 'react-relay';
-import useRefresh from '../../hooks/useRefresh';
+
+import useRefresh from 'src/hooks/useRefresh';
+
 import { UserIndexListQuery } from './__generated__/UserIndexListQuery.graphql';
 
 export default function UserIndex(): React.ReactElement | null {

@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+
 import ErrorBoundary from './components/ErrorBoundary';
 import Loading from './components/Loading/Loading';
 

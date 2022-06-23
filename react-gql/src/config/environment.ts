@@ -1,12 +1,12 @@
 import {
-  Environment,
-  RecordSource,
-  Network,
-  Store,
-  RequestParameters,
-  Variables,
   CacheConfig,
+  Environment,
   GraphQLResponse,
+  Network,
+  RecordSource,
+  RequestParameters,
+  Store,
+  Variables,
 } from 'relay-runtime';
 
 const store = new Store(new RecordSource(), {

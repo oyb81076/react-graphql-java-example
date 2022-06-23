@@ -8,6 +8,9 @@
     "plugin:react-hooks/recommended",
     "prettier"
   ],
+  "plugins": [
+    "simple-import-sort"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -23,6 +26,24 @@
     }
   ],
   "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "react",
+            "^@?\\w"
+          ],
+          [
+            "^src/"
+          ]
+        ]
+      }
+    ],
+    // "simple-import-sort/exports": "error",
+    // "import/first": "error",
+    // "import/newline-after-import": "error",
+    // "import/no-duplicates": "error",
     "@typescript-eslint/no-use-before-define": 0,
     "react/jsx-uses-react": 2,
     "react/jsx-no-useless-fragment": 0,
@@ -42,40 +63,6 @@
       {
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function"
-      }
-    ],
-    "import/order": [
-      "error",
-      {
-        "pathGroups": [
-          {
-            "pattern": "react*",
-            "group": "external",
-            "position": "before"
-          },
-          {
-            "pattern": "src/**",
-            "group": "builtin",
-            "position": "after"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": [
-          "react"
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        },
-        "groups": [
-          "type",
-          "object",
-          "external",
-          "builtin",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ]
       }
     ]
   }

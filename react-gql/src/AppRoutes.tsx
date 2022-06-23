@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';
+
 import App from './App';
 import HomeIndex from './views/home/HomeIndex';
 import Login from './views/login/Login';

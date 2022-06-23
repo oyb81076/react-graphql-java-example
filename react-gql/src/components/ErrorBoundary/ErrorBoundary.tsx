@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BoundaryContext } from '../../hooks/useErrorBoundary';
 
 interface Props {

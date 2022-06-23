@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { RelayEnvironmentProvider } from 'react-relay';
 import { HashRouter } from 'react-router-dom';
-import ReactDOM from 'react-dom/client';
+
 import AppRoutes from './AppRoutes';
 import environment from './config/environment';
 import reportWebVitals from './reportWebVitals';
